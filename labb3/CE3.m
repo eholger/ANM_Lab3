@@ -1,7 +1,7 @@
 clear
 N=[10 20 40];
 tau=[0.5,1,1.5,2];
-h=1./N(1);
+h=1/N(1);
 hspan=linspace(0,1,N(1)+1);
 A=(1/h^2)*full(gallery('tridiag',N(1),1,-2,1));
 A(10,9)=200;
@@ -24,7 +24,7 @@ for tt=2:length(tspan)
     %u(tt-1,:)=A\b';
     u(:,tt)= u(:,tt-1)+deltt*(A*u(:,tt-1)+b);
 end
-%% assignment 1
+% assignment 1
 U=zeros(N(1)+1,length(tspan));
 U(1,tspan<=1)=1;
 U(2:end,:)=u;
